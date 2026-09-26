@@ -1,0 +1,57 @@
+{
+  "name": "leitweg-id",
+  "version": "0.1.0",
+  "description": "Validate, parse and build Leitweg-IDs for XRechnung, plus the other German e-invoice party IDs: USt-IdNr, W-IdNr and SEPA Gläubiger-ID. Zero dependencies.",
+  "keywords": [
+    "leitweg-id",
+    "leitweg",
+    "xrechnung",
+    "e-rechnung",
+    "zugferd",
+    "peppol",
+    "ust-idnr",
+    "wirtschafts-identifikationsnummer",
+    "glaeubiger-id",
+    "sepa",
+    "validation"
+  ],
+  "license": "MIT",
+  "author": "seamless.engineering (https://seamless.engineering)",
+  "homepage": "https://github.com/seamless-engineering/leitweg-id#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seamless-engineering/leitweg-id.git"
+  },
+  "bugs": "https://github.com/seamless-engineering/leitweg-id/issues",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.10.0",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "pnpm typecheck && pnpm test && pnpm build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vitest": "^4.1.11"
+  }
+}
